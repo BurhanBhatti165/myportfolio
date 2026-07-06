@@ -1,0 +1,61 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ffff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff80;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ffff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#brainGradient)" opacity="0.1"/>
+  
+  <!-- Brain Core -->
+  <ellipse cx="200" cy="200" rx="60" ry="50" fill="url(#brainGradient)" opacity="0.8" filter="url(#glow)"/>
+  
+  <!-- Neural Nodes -->
+  <circle cx="150" cy="170" r="4" fill="url(#nodeGradient)" opacity="0.9"/>
+  <circle cx="250" cy="170" r="4" fill="url(#nodeGradient)" opacity="0.9"/>
+  <circle cx="200" cy="240" r="4" fill="url(#nodeGradient)" opacity="0.9"/>
+  <circle cx="170" cy="220" r="4" fill="url(#nodeGradient)" opacity="0.9"/>
+  <circle cx="230" cy="220" r="4" fill="url(#nodeGradient)" opacity="0.9"/>
+  
+  <!-- Connection Lines -->
+  <line x1="150" y1="170" x2="200" y2="200" stroke="url(#nodeGradient)" stroke-width="2" opacity="0.6"/>
+  <line x1="250" y1="170" x2="200" y2="200" stroke="url(#nodeGradient)" stroke-width="2" opacity="0.6"/>
+  <line x1="200" y1="200" x2="200" y2="240" stroke="url(#nodeGradient)" stroke-width="2" opacity="0.6"/>
+  <line x1="170" y1="220" x2="200" y2="200" stroke="url(#nodeGradient)" stroke-width="2" opacity="0.6"/>
+  <line x1="230" y1="220" x2="200" y2="200" stroke="url(#nodeGradient)" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Data Flow Particles -->
+  <circle cx="160" cy="190" r="2" fill="#ff8000" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="240" cy="190" r="2" fill="#ff8000" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+  
+  <!-- Floating Elements -->
+  <circle cx="100" cy="100" r="3" fill="url(#nodeGradient)" opacity="0.6">
+    <animate attributeName="cy" values="100;80;100" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="300" cy="120" r="3" fill="url(#nodeGradient)" opacity="0.6">
+    <animate attributeName="cy" values="120;100;120" dur="3s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+  <circle cx="80" cy="300" r="3" fill="url(#nodeGradient)" opacity="0.6">
+    <animate attributeName="cy" values="300;280;300" dur="3s" repeatCount="indefinite" begin="2s"/>
+  </circle>
+  <circle cx="320" cy="280" r="3" fill="url(#nodeGradient)" opacity="0.6">
+    <animate attributeName="cy" values="280;300;280" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+</svg> 

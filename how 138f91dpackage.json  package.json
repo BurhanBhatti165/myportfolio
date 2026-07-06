@@ -1,0 +1,5 @@
+[33mb692c09[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Resolve merge conflict
+[33m138f91d[m Update portfolio for deployment
+[33m5fbab44[m Updates
+[33ma08a0c9[m style: format codebase with Prettier for CI
+[33m4a5f3a9[m ci: grant actions token write permission for gh-pages push

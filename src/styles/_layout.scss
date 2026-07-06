@@ -1,0 +1,21 @@
+@import "./breakpoints";
+
+.layout-boundary {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  @include respond(sm) {
+    padding: 0 0.75rem;
+  }
+}
+
+.stack-sm {
+  display: flex;
+  gap: 1.25rem;
+  @include respond(md) {
+    flex-direction: column;
+  }
+}
+
+.hide-sm { @include respond(sm) { display: none !important; } }

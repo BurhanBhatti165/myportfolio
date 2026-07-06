@@ -1,0 +1,161 @@
+@import "../../_globalColor";
+
+.software-skills-main-div {
+  margin-top: 30px;
+}
+
+.dev-icons {
+  list-style: none;
+  font-size: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.software-skill-inline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+  min-height: 120px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: rgba(0, 255, 255, 0.1);
+    border-color: rgba(0, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
+    
+    &::before {
+      left: 100%;
+    }
+    
+    .skill-logo {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8));
+    }
+    
+    p {
+      color: #00ffff;
+      transform: translateY(-2px);
+    }
+  }
+  
+  .skill-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  
+  .skill-logo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+  
+  p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+// Dark mode enhancements
+.dark-mode {
+  .software-skill-inline {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 255, 255, 0.2);
+    
+    &:hover {
+      background: rgba(0, 255, 255, 0.15);
+      border-color: rgba(0, 255, 255, 0.5);
+    }
+    
+    p {
+      color: #fff;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .dev-icons {
+    gap: 15px;
+  }
+  
+  .software-skill-inline {
+    padding: 15px;
+    min-width: 100px;
+    min-height: 100px;
+    
+    .skill-logo {
+      width: 40px;
+      height: 40px;
+    }
+    
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .dev-icons {
+    gap: 10px;
+  }
+  
+  .software-skill-inline {
+    padding: 12px;
+    min-width: 80px;
+    min-height: 80px;
+    
+    .skill-logo {
+      width: 32px;
+      height: 32px;
+    }
+    
+    p {
+      font-size: 0.7rem;
+    }
+  }
+}

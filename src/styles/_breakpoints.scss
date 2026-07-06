@@ -1,0 +1,14 @@
+// Central breakpoint definitions & mixin
+$bp-xs: 360px;
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+@mixin respond($point) {
+  @if $point == xs { @media (max-width: #{$bp-xs}) { @content; } }
+  @else if $point == sm { @media (max-width: #{$bp-sm}) { @content; } }
+  @else if $point == md { @media (max-width: #{$bp-md}) { @content; } }
+  @else if $point == lg { @media (max-width: #{$bp-lg}) { @content; } }
+  @else if $point == xl { @media (max-width: #{$bp-xl}) { @content; } }
+}
